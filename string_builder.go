@@ -18,8 +18,10 @@ func (sb *StringBuilder) ToString() *string {
 	b := make([]byte, 0, sb.length)
 
 	for _, w := range sb.words {
-		b = append(b, w)
+		b = append(b, []byte(w)...)
 	}
 
-	return &string(b)
+	blah := string(b)
+
+	return &blah
 }
